@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><menu></menu></title>
+  <link rel="stylesheet" href="menu.css">
+</head>
+<body>
+  <!-- Main Bar -->
+  <header class="main-bar">
+    <div class="main-bar-items">
+      <h2 class="logo">Ambrosia 🍩</h2>
+      <ul class="main-bar-list">
+        <li>Home</li>
+        <li>Products</li>
+        <li>Contact Us</li>
+        <li id="cart-icon">🛒 <a href="cart.html">Cart</a> (<span id="cart-count">0</span>)<p>Total: ₹<span id="cart-total">0</span></p>
+</li>
+<li><a href="checkout.html">Checkout</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <section class="menu-section">
+    <h2 class="menu">Our Menu</h2>
+    <div class="menu-container">
+      
+      <!-- FILTER SECTION -->
+<aside class="filter-section">
+  <h3>Filters</h3>
+  <div>
+    <h4>Categories</h4>
+    <label><input type="checkbox" class="category-filter" value="cakes"> Cakes</label><br>
+    <label><input type="checkbox" class="category-filter" value="brownies"> Brownies</label><br>
+    <label><input type="checkbox" class="category-filter" value="cookies"> Cookies</label><br>
+    <label><input type="checkbox" class="category-filter" value="pastries"> Pastries</label><br>
+    <label><input type="checkbox" class="category-filter" value="desserts"> Desserts</label><br>
+    <label><input type="checkbox" class="category-filter" value="breads"> Breads</label>
+  </div>
+
+  <div>
+    <h4>Price Range</h4>
+    <label><input type="radio" class="price-filter" name="price" value="0-200"> Under ₹200</label><br>
+    <label><input type="radio" class="price-filter" name="price" value="200-500"> ₹200 - ₹500</label><br>
+    <label><input type="radio" class="price-filter" name="price" value="500+"> Above ₹500</label>
+  </div>
+</aside>
+
+      <!-- MENU ITEMS -->
+     <!-- Cakes -->
+<h2 class="menu-title">Our Cakes</h2>
+<div class="cakes">
+  <div class="cake-item product-card" data-category="cakes" data-price="800">
+    <img src="chococheesecake.jpeg" alt="Chocolate Cheesecake">
+    <h4>Chocolate Cheesecake</h4>
+    <p class="price">₹800 (1Kg)</p>
+    <button class="add-btn">Add To Cart</button>
+  </div>
+
+  <div class="cake-item product-card" data-category="cakes" data-price="500">
+    <img src="matcha cheese cake.jpeg" alt="Matcha Cheesecake">
+    <h4>Matcha Cheesecake</h4>
+    <p class="price">₹500 (½Kg)</p>
+    <button class="add-btn">Add To Cart</button>
+  </div>
+
+  <div class="cake-item product-card" data-category="cakes" data-price="400" >
+    <img src="pineapple cheese cake.jpeg" alt="Pineapple Cheesecake">
+    <h4>Pineapple Cheesecake</h4>
+    <p class="price">₹400 (1Kg)</p>
+    <button class="add-btn">Add To Cart</button>
+  </div>
+
+  <div class="cake-item product-card" data-category="cakes" data-price="1300">
+    <img src="charcoal oreo cake.jpeg" alt="Charcoal Oreo Cake">
+    <h4>Charcoal Oreo Cake</h4>
+    <p class="price">₹1300 (1Kg)</p>
+    <button class="add-btn">Add To Cart</button>
+  </div>
+
+  <div class="cake-item product-card" data-category="cakes" data-price="900">
+    <img src="blueberry choco cake.jpeg" alt="Blueberry Choco Cake">
+    <h4>Blueberry Choco Cake</h4>
+    <p class="price">₹900 (½Kg)</p>
+    <button class="add-btn">Add To Cart</button>
+  </div>
+
+  <div class="cake-item product-card" data-category="cakes" data-price="800">
+    <img src="chocotrufflecake.jpeg" alt="Choco Truffle Cake">
+    <h4>Choco Truffle Cake</h4>
+    <p class="price">₹800 (1Kg)</p>
+    <button class="add-btn">Add To Cart</button>
+  </div>
+
+  <div class="cake-item product-card" data-category="cakes" data-price="700">
+    <img src="strawberrycake.jpeg" alt="Strawberry Cake">
+    <h4>Strawberry Cake</h4>
+    <p class="price">₹700 (½Kg)</p>
+    <button class="add-btn">Add To Cart</button>
+  </div>
+</div>
+
+<!-- Brownies -->
+<h2 class="menu-title">Our Brownies</h2>
+<div class="brownies product-card" data-category="brownies" data-price="110">
+  <div class="brownie-item">
+    <img src="Brownie Fudgy .jpeg" alt="brownie">
+    <h4>Dreamy Choco Brownie</h4>
+    <p class="price">₹110 (2 pieces)</p>
+    <button class="add-btn">Add To Cart</button>
+  </div>
+  <div class="brownie-item product-card" data-category="brownies" data-price="120">
+    <img src="Halloween brownie.jpeg" alt="brownie">
+    <h4>Halloween Brownie</h4>
+    <p class="price">₹120 (2 pieces)</p>
+    <button class="add-btn">Add To Cart</button>
+  </div>
+  <div class="brownie-item product-card" data-category="brownies" data-price="260">
+    <img src="browniebox.jpeg" alt="brownie">
+    <h4>Brownie Box</h4>
+    <p class="price">₹260 (box of 6)</p>
+    <button class="add-btn">Add To Cart</button>
+  </div>
+</div>
+
+<!-- Cookies -->
+<h2 class="menu-title">Our Cookies</h2>
+<div class="cookies">
+  <div class="cookie-item product-card" data-category="cookies" data-price="250">
+    <img src="Cookie Monster Cookies.jpeg" alt="cookie">
+    <h4>Cookie Monster Cookies</h4>
+    <p class="price">₹250 (6 cookies)</p>
+    <button class="add-btn">Add To Cart</button>
+  </div>
+
+  <div class="cookie-item product-card" data-category="cookies" data-price="210">
+    <img src="✨ Blueberry Heaven Cookies.jpeg" alt="cookie">
+    <h4>Blueberry Heaven Cookies</h4>
+    <p class="price">₹210 (6 cookies)</p>
+    <button class="add-btn">Add To Cart</button>
+  </div>
+
+  <div class="cookie-item product-card" data-category="cookies" data-price="200">
+    <img src="Matcha Chocolate Chip Cookies.jpeg" alt="cookie">
+    <h4>Grinch Matcha Cookies</h4>
+    <p class="price">₹200 (6 cookies)</p>
+    <button class="add-btn">Add To Cart</button>
+  </div>
+
+  <div class="cookie-item product-card" data-category="cookies" data-price="290">
+    <img src="Red Velvet Cheesecake Cookies.jpeg" alt="cookie">
+    <h4>Devil's Cookies</h4>
+    <p class="price">₹290 (6 cookies)</p>
+    <button class="add-btn">Add To Cart</button>
+  </div>
+
+  <div class="cookie-item product-card" data-category="cookies" data-price="300">
+    <img src="cookiebox.jpeg" alt="cookie">
+    <h4>Rainbow Cookie Box</h4>
+    <p class="price">₹300 (box of 8)</p>
+    <button class="add-btn">Add To Cart</button>
+  </div>
+</div>
+
+<!-- Pastries -->
+<h2 class="menu-title">Our Pastries</h2>
+<div class="pastries product-card" data-category="pastries" data-price="130">
+  <div class="pastry-item">
+    <img src="Chocolate pastry.jpeg" alt="pastry">
+    <h4>Double Trouble Pastry</h4>
+    <p class="price">₹130 (per piece)</p>
+    <button class="add-btn">Add To Cart</button>
+  </div>
+
+  <div class="pastry-item product-card" data-category="pastries" data-price="150">
+    <img src="Red Velvet Dream Cake.jpeg" alt="pastry">
+    <h4>Bloody Mary Pastry</h4>
+    <p class="price">₹150 (per piece)</p>
+    <button class="add-btn">Add To Cart</button>
+  </div>
+
+  <div class="pastry-item product-card" data-category="pastries" data-price="190">
+    <img src="Biscoff Cheesecake Recipe.jpeg" alt="pastry">
+    <h4>Biscoff Dream Pastry</h4>
+    <p class="price">₹190 (per piece)</p>
+    <button class="add-btn">Add To Cart</button>
+  </div>
+</div>
+
+<!-- Desserts -->
+<h2 class="menu-title">Our Desserts</h2>
+<div class="desserts product-card" data-category="desserts" data-price="200">
+  <div class="dessert-item">
+    <img src="dessertbox.jpeg" alt="dessert">
+    <h4>SugarCrash Dessert Box</h4>
+    <p class="price">₹200 (box of 10)</p>
+    <button class="add-btn">Add To Cart</button>
+  </div>
+
+  <div class="dessert-item product-card" data-category="desserts" data-price="130">
+    <img src="desserts 1.jpeg" alt="dessert">
+    <h4>Swiftie Muffins</h4>
+    <p class="price">₹130 (box of 11)</p>
+    <button class="add-btn">Add To Cart</button>
+  </div>
+
+  <div class="dessert-item product-card" data-category="desserts" data-price="260">
+    <img src="party cakes.jpeg" alt="dessert">
+    <h4>TS Party Cakes</h4>
+    <p class="price">₹260 (box of 11)</p>
+    <button class="add-btn">Add To Cart</button>
+  </div>
+</div>
+
+<!-- Breads -->
+<h2 class="menu-title">Our Breads</h2>
+<div class="breads product-card" data-category="breads" data-price="350">
+  <div class="bread-item">
+    <img src="Sourdough.jpeg" alt="bread">
+    <h4>Sourdough Bread</h4>
+    <p class="price">₹350 (1 loaf - 20 slices)</p>
+    <button class="add-btn">Add To Cart</button>
+  </div>
+
+  <div class="bread-item product-card" data-category="breads" data-price="390">
+    <img src="banana bread.jpeg" alt="bread">
+    <h4>Classic Banana Bread</h4>
+    <p class="price">₹390 (1 loaf - 20 slices)</p>
+    <button class="add-btn">Add To Cart</button>
+  </div>
+
+  <div class="bread-item product-card" data-category="breads" data-price="400">
+    <img src="Double Chocolate Banana Bread.jpeg" alt="bread">
+    <h4>Double Chocolate Bread</h4>
+    <p class="price">₹400 (1 loaf - 20 slices)</p>
+    <button class="add-btn">Add To Cart</button>
+  </div>
+
+  <div class="bread-item product-card" data-category="breads" data-price="320">
+    <img src="Multigrain Bread.jpeg" alt="bread">
+    <h4>Multigrain Bread</h4>
+    <p class="price">₹320 (1 loaf - 20 slices)</p>
+    <button class="add-btn">Add To Cart</button>
+  </div>
+</div>
+</div>
+  </section>
+</body>
+<script src="menu.js">
+</script>
+</html>

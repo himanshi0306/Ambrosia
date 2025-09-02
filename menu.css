@@ -1,0 +1,236 @@
+/* 🌸 Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #fffaf6;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* 🌸 Main Header Bar */
+.main-bar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.8); /* frosted glass */
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  z-index: 1000;
+  padding: 12px 50px;
+}
+
+.main-bar-items {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* 🎀 Logo */
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #ff6699;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.logo:hover {
+  transform: scale(1.05);
+}
+
+/* 🍪 Navbar */
+.main-bar-list {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+.main-bar-list li {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #444;
+  cursor: pointer;
+  position: relative;
+  transition: 0.3s ease;
+  padding: 5px 10px;
+}
+.main-bar-list li::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #ff9ecb, #ff6699);
+  transition: width 0.3s ease;
+  border-radius: 2px;
+}
+.main-bar-list li:hover::after {
+  width: 100%;
+}
+.main-bar-list li:hover {
+  color: #ff4081;
+  transform: translateY(-2px);
+}
+
+/* 📂 Layout */
+.container {
+  display: flex;
+  margin-top: 80px; /* space for header */
+}
+
+/* 📑 Filter Sidebar */
+.filter-section {
+  width: 260px;
+  background: #fff;
+  padding: 25px;
+  border-right: 1px solid #eee;
+  min-height: calc(100vh - 80px);
+  position: fixed;
+  top: 80px;
+  left: 0;
+  overflow-y: auto;
+  box-shadow: 4px 0 12px rgba(0,0,0,0.04);
+}
+
+.filter-section h3 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: #ff6699;
+}
+
+.filter-group {
+  margin-bottom: 25px;
+}
+.filter-group label {
+  display: block;
+  margin: 6px 0;
+  cursor: pointer;
+  color: #555;
+  font-size: 0.95rem;
+  transition: 0.2s ease;
+}
+.filter-group label:hover {
+  color: #ff4081;
+}
+input[type="checkbox"], input[type="range"] {
+  margin-right: 8px;
+}
+
+/* 🍰 Menu Section */
+.menu-section {
+  margin-left: 280px; /* offset for sidebar */
+  padding: 30px;
+  flex: 1;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 40px 0 20px;
+  color: #ff6699;
+  position: relative;
+}
+.section-title::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, #ff9ecb, #ff6699);
+  margin: 8px auto 0;
+  border-radius: 2px;
+}
+
+/* 🍩 Shared Container */
+.cakes, .brownies, .cookies, .pastries, .desserts, .breads {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: center;
+  margin: 30px 0;
+}
+
+/* 🧁 Product Card */
+.cake-item, .brownie-item, .cookie-item, .pastry-item, .dessert-item, .bread-item {
+  background: #fff;
+  border-radius: 20px;
+  width: 230px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+  border: 1px solid #ffe6ef;
+  transition: 0.3s ease;
+}
+.cake-item:hover, .brownie-item:hover, .cookie-item:hover,
+.pastry-item:hover, .dessert-item:hover, .bread-item:hover {
+  transform: translateY(-8px) scale(1.04);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+  border-color: #ffb6d9;
+}
+
+/* 🖼️ Image */
+.cake-item img, .brownie-item img, .cookie-item img, 
+.pastry-item img, .dessert-item img, .bread-item img {
+  width: 110px;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 12px;
+  border: 3px solid #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+/* 📝 Name */
+.cake-item h4, .brownie-item h4, .cookie-item h4,
+.pastry-item h4, .dessert-item h4, .bread-item h4 {
+  font-size: 1.2rem;
+  margin: 10px 0;
+  color: #ff6699;
+  font-weight: 600;
+}
+
+/* 💵 Price */
+.price {
+  font-weight: bold;
+  color: #ff4081;
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+/* 🛒 Button */
+.cake-item button, .brownie-item button, .cookie-item button,
+.pastry-item button, .dessert-item button, .bread-item button {
+  margin-top: 8px;
+  padding: 9px 16px;
+  border-radius: 25px;
+  background: linear-gradient(135deg, #ffb6d9, #ff6699);
+  color: white;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.cake-item button:hover, .brownie-item button:hover,
+.cookie-item button:hover, .pastry-item button:hover,
+.dessert-item button:hover, .bread-item button:hover {
+  background: linear-gradient(135deg, #ff6699, #ff4081);
+  transform: scale(1.07);
+}
+.menu-title{
+  text-align: center;
+}
+.menu{
+  font-size: xx-large;
+}
+a{
+  text-decoration: none;
+  color: #444;
+}

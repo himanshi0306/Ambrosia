@@ -1,0 +1,109 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(-45deg, #ffdde1, #c3f8e5, #f6d5f7, #fff1c1);
+  background-size: 300% 300%;
+  animation: gradientShift 12s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.login-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: none;
+  width: 420px;
+  height: 420px;
+  border-radius: 35px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15),
+              inset 0 0 30px rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(15px);
+  transition: transform 0.3s ease;
+}
+
+.login-box:hover {
+  transform: translateY(-8px) scale(1.02);
+}
+
+.login-box h2 {
+  text-align: center;
+  margin: 20px;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #ff6699;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+}
+
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#loginForm {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  flex-direction: column;
+}
+
+#username, #contact, #email {
+  padding: 12px;
+  border-radius: 15px;
+  width: 260px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.6);
+  box-shadow: inset 2px 2px 6px rgba(0, 0, 0, 0.1),
+              inset -2px -2px 6px rgba(255, 255, 255, 0.6);
+  transition: all 0.3s ease;
+}
+
+#username:focus, #contact:focus, #email:focus {
+  background: #fffafc;
+  border: 2px solid #ff9ecb;
+  box-shadow: 0 0 12px rgba(255, 160, 200, 0.7);
+}
+
+#submit {
+  padding: 12px;
+  width: 120px;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, #ff9ecb, #ff6699);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(255, 100, 150, 0.4);
+}
+
+#submit:hover {
+  background: linear-gradient(135deg, #ff6699, #ff4081);
+  transform: scale(1.08);
+  box-shadow: 0 6px 16px rgba(255, 100, 150, 0.6);
+}

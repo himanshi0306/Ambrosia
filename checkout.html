@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout Page</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background: linear-gradient(120deg, #fbc2eb, #a6c1ee, #d4fc79);
+      background-size: 300% 300%;
+      animation: bgShift 10s infinite alternate;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    @keyframes bgShift {
+      0% { background-position: left; }
+      100% { background-position: right; }
+    }
+
+    .checkout-box {
+      background: rgba(255, 255, 255, 0.8);
+      padding: 30px;
+      border-radius: 20px;
+      width: 380px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      backdrop-filter: blur(8px);
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h2 {
+      text-align: center;
+      color: #444;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin: 10px 0 5px;
+      font-size: 14px;
+      color: #555;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 10px;
+      outline: none;
+      background: #f7f1ff;
+      transition: 0.3s;
+    }
+
+    input:focus {
+      background: #fff;
+      box-shadow: 0 0 8px rgba(150, 120, 255, 0.5);
+    }
+
+    /* Payment card styling */
+    .payment-options {
+      margin-top: 10px;
+      display: flex;
+      gap: 10px;
+      flex-direction: column;
+    }
+
+    .payment-option {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 15px;
+      border-radius: 12px;
+      background: #f7f1ff;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: all 0.3s ease;
+      font-size: 14px;
+      color: #444;
+    }
+
+    .payment-option:hover {
+      background: #fff;
+      border-color: #a1c4fd;
+    }
+
+    .payment-option input[type="radio"] {
+      accent-color: #6a5acd; /* nice purple */
+      transform: scale(1.2);
+      cursor: pointer;
+    }
+
+    .payment-option span {
+      font-weight: 500;
+    }
+
+    .btn {
+      margin-top: 20px;
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 15px;
+      background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
+      color: #333;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+    }
+
+    .success-msg {
+      text-align: center;
+      margin-top: 15px;
+      color: green;
+      font-weight: bold;
+      display: none;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="checkout-box">
+    <h2>Checkout</h2>
+    <form id="checkoutForm">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" required>
+
+      <label for="address">Address</label>
+      <input type="text" id="address" required>
+
+      <label>Payment Method</label>
+      <div class="payment-options">
+        <label class="payment-option">
+          <input type="radio" name="payment" value="gpay" id="gpay" required>
+          <span>📱 GPay</span>
+        </label>
+        <label class="payment-option">
+          <input type="radio" name="payment" value="cod" id="cod">
+          <span>💵 Cash on Delivery</span>
+        </label>
+      </div>
+
+      <!-- GPay input -->
+      <div id="gpayBox" class="hidden">
+        <label for="upi">Enter UPI ID (GPay)</label>
+        <input type="text" id="upi" placeholder="example@upi">
+      </div>
+
+      <!-- COD info -->
+      <div id="codBox" class="hidden">
+        <p style="margin-top:10px; font-size:14px; color:#444;">💵 Pay with cash upon delivery.</p>
+      </div>
+
+      <button type="submit" class="btn">Confirm Order</button>
+      <p class="success-msg" id="successMsg">✅ Order Placed Successfully!</p>
+    </form>
+  </div>
+
+  <script>
+    const form = document.getElementById("checkoutForm");
+    const successMsg = document.getElementById("successMsg");
+    const gpayRadio = document.getElementById("gpay");
+    const codRadio = document.getElementById("cod");
+    const gpayBox = document.getElementById("gpayBox");
+    const codBox = document.getElementById("codBox");
+
+    // Show / Hide payment fields
+    gpayRadio.addEventListener("change", () => {
+      gpayBox.classList.remove("hidden");
+      codBox.classList.add("hidden");
+    });
+
+    codRadio.addEventListener("change", () => {
+      codBox.classList.remove("hidden");
+      gpayBox.classList.add("hidden");
+    });
+
+    // Submit form
+    form.addEventListener("submit", function(e) {
+      e.preventDefault(); // stop refresh
+
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const address = document.getElementById("address").value;
+      let paymentMethod = "";
+      let paymentDetails = "";
+
+      if (gpayRadio.checked) {
+        paymentMethod = "GPay";
+        paymentDetails = document.getElementById("upi").value;
+      } else if (codRadio.checked) {
+        paymentMethod = "Cash on Delivery";
+      }
+
+      console.log("=== Checkout Details ===");
+      console.log("Full Name:", name);
+      console.log("Email:", email);
+      console.log("Address:", address);
+      console.log("Payment Method:", paymentMethod);
+      console.log("Details:", paymentDetails);
+
+      successMsg.style.display = "block";
+
+      setTimeout(() => {
+        successMsg.style.display = "none";
+        form.reset();
+        gpayBox.classList.add("hidden");
+        codBox.classList.add("hidden");
+      }, 3000);
+    });
+  </script>
+</body>
+</html>
